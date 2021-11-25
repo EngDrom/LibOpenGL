@@ -1,4 +1,4 @@
-package engine.maths;
+package org.EngDrom.LibOpenGL.engine.maths;
 
 public class Matrix4f {
 

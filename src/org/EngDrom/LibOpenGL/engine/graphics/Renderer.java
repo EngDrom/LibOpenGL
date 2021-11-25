@@ -1,15 +1,14 @@
-package engine.graphics;
+package org.EngDrom.LibOpenGL.engine.graphics;
 
+import org.EngDrom.LibOpenGL.engine.graphics.meshes.ColorMesh;
+import org.EngDrom.LibOpenGL.engine.graphics.meshes.TexturedMesh;
+import org.EngDrom.LibOpenGL.engine.io.Window;
+import org.EngDrom.LibOpenGL.engine.maths.Matrix4f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL30;
-
-import engine.graphics.meshes.ColorMesh;
-import engine.graphics.meshes.TexturedMesh;
-import engine.io.Window;
-import engine.maths.Matrix4f;
-import engine.maths.Vector3f;
 
 public class Renderer {
 	private Shader shader;

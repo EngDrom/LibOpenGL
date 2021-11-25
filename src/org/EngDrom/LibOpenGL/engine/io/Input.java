@@ -1,4 +1,4 @@
-package engine.io;
+package org.EngDrom.LibOpenGL.engine.io;
 
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWCursorPosCallback;

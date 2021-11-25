@@ -1,17 +1,17 @@
-package config;
+package org.EngDrom.LibOpenGL.config;
 
 import java.util.HashMap;
 
+import org.EngDrom.LibOpenGL.engine.graphics.Camera;
+import org.EngDrom.LibOpenGL.engine.graphics.Material;
+import org.EngDrom.LibOpenGL.engine.graphics.Renderer;
+import org.EngDrom.LibOpenGL.engine.graphics.Shader;
+import org.EngDrom.LibOpenGL.engine.graphics.meshes.TexturedMesh;
+import org.EngDrom.LibOpenGL.engine.io.Window;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.utils.FileUtils;
 import org.lwjgl.glfw.GLFW;
 
-import engine.graphics.Camera;
-import engine.graphics.Material;
-import engine.graphics.Renderer;
-import engine.graphics.Shader;
-import engine.graphics.meshes.TexturedMesh;
-import engine.io.Window;
-import engine.maths.Vector3f;
-import engine.utils.FileUtils;
 import exports.CameraNode;
 import exports.Constants;
 import exports.MaterialNode;

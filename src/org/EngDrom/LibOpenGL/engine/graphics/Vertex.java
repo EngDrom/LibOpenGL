@@ -1,6 +1,6 @@
-package engine.graphics;
+package org.EngDrom.LibOpenGL.engine.graphics;
 
-import engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 
 public class Vertex {
 	private Vector3f position;

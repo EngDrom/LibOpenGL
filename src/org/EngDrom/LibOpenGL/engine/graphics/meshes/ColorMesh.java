@@ -1,14 +1,13 @@
-package engine.graphics.meshes;
+package org.EngDrom.LibOpenGL.engine.graphics.meshes;
 
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 
+import org.EngDrom.LibOpenGL.engine.graphics.Mesh;
+import org.EngDrom.LibOpenGL.engine.graphics.Vertex;
+import org.EngDrom.LibOpenGL.engine.graphics.vertex.ColoredVertex;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.system.MemoryUtil;
-
-import engine.graphics.Mesh;
-import engine.graphics.Vertex;
-import engine.graphics.vertex.ColoredVertex;
 
 public class ColorMesh extends Mesh{
 

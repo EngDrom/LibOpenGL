@@ -1,16 +1,15 @@
-package engine.graphics.meshes;
+package org.EngDrom.LibOpenGL.engine.graphics.meshes;
 
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 
+import org.EngDrom.LibOpenGL.engine.graphics.Material;
+import org.EngDrom.LibOpenGL.engine.graphics.Mesh;
+import org.EngDrom.LibOpenGL.engine.graphics.Vertex;
+import org.EngDrom.LibOpenGL.engine.graphics.vertex.TexturedVertex;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.system.MemoryUtil;
-
-import engine.graphics.Material;
-import engine.graphics.Mesh;
-import engine.graphics.Vertex;
-import engine.graphics.vertex.TexturedVertex;
-import engine.maths.Vector3f;
 
 public class TexturedMesh extends Mesh {
 

@@ -1,4 +1,4 @@
-package engine.utils;
+package org.EngDrom.LibOpenGL.engine.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,13 +10,13 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import engine.graphics.Material;
-import engine.graphics.Mesh;
-import engine.graphics.Vertex;
-import engine.graphics.meshes.TexturedMesh;
-import engine.graphics.vertex.TexturedVertex;
-import engine.maths.Vector2f;
-import engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.graphics.Material;
+import org.EngDrom.LibOpenGL.engine.graphics.Mesh;
+import org.EngDrom.LibOpenGL.engine.graphics.Vertex;
+import org.EngDrom.LibOpenGL.engine.graphics.meshes.TexturedMesh;
+import org.EngDrom.LibOpenGL.engine.graphics.vertex.TexturedVertex;
+import org.EngDrom.LibOpenGL.engine.maths.Vector2f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 
 public class FileUtils {
 

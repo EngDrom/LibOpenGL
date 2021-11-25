@@ -1,13 +1,12 @@
-package engine.io;
+package org.EngDrom.LibOpenGL.engine.io;
 
+import org.EngDrom.LibOpenGL.engine.maths.Matrix4f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
-
-import engine.maths.Matrix4f;
-import engine.maths.Vector3f;
 
 public class Window {
 	// Width and Height of window

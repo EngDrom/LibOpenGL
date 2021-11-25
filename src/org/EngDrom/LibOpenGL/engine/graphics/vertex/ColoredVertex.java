@@ -1,7 +1,7 @@
-package engine.graphics.vertex;
+package org.EngDrom.LibOpenGL.engine.graphics.vertex;
 
-import engine.graphics.Vertex;
-import engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.graphics.Vertex;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 
 public class ColoredVertex extends Vertex{
 	private Vector3f color;

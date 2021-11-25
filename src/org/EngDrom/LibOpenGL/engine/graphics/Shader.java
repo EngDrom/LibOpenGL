@@ -1,16 +1,15 @@
-package engine.graphics;
+package org.EngDrom.LibOpenGL.engine.graphics;
 
 import java.nio.FloatBuffer;
 
+import org.EngDrom.LibOpenGL.engine.io.Window;
+import org.EngDrom.LibOpenGL.engine.maths.Matrix4f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector2f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.utils.FileUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.system.MemoryUtil;
-
-import engine.io.Window;
-import engine.maths.Matrix4f;
-import engine.maths.Vector2f;
-import engine.maths.Vector3f;
-import engine.utils.FileUtils;
 
 public class Shader {
 	// Shaders Code

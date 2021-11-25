@@ -1,8 +1,8 @@
-package engine.graphics.vertex;
+package org.EngDrom.LibOpenGL.engine.graphics.vertex;
 
-import engine.graphics.Vertex;
-import engine.maths.Vector2f;
-import engine.maths.Vector3f;
+import org.EngDrom.LibOpenGL.engine.graphics.Vertex;
+import org.EngDrom.LibOpenGL.engine.maths.Vector2f;
+import org.EngDrom.LibOpenGL.engine.maths.Vector3f;
 
 public class TexturedVertex extends Vertex {
 	

@@ -1,4 +1,4 @@
-package engine.graphics;
+package org.EngDrom.LibOpenGL.engine.graphics;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
