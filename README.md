@@ -1,3 +1,5 @@
-# LibOpenGL / LWDGL
+# LibOpenGL
 
-Dromadaire Implementation of OpenGL with LWJGL
+OpenGL library for EngDrom
+
+The library is based on LWDGL which is the dromadaire extension for opengl.
