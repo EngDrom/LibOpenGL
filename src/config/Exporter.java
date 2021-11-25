@@ -21,7 +21,7 @@ import libs.LibExporter;
 import parser.Node;
 import variables.ClassNode;
 
-public class Exporter implements LibExporter {
+public class Exporter {
 
 	public static boolean GLFW_INITIALIZED = false;
 	public static void init() {
@@ -63,26 +63,6 @@ public class Exporter implements LibExporter {
 		w.destroy();
 		m.destroy();
 		s.destroy();
-	}
-	
-	@Override
-	public HashMap<String, Node> exportClasses() {
-		HashMap<String, Node> map = new HashMap<String, Node>();
-		
-		map.put("Window", new WindowNode(-1, -1));
-		map.put("Material", new MaterialNode(-1, -1));
-		map.put("Camera", new CameraNode(-1, -1));
-		
-		ClassNode cl = new ClassNode(-1, -1);
-		cl.typeName = "GLConst";
-		cl.name = "GLConst";
-		cl.isRoot = false;
-		cl.importContext(Constants.computeConstants());
-		map.put("GLConst", cl);
-		
-		map.put("raw", RawOpenGL.computerRaw());
-		
-		return map;
 	}
 
 }
