@@ -47,5 +47,13 @@ public class Vector3f {
 	public Vector3f multiply(Vector3f v) {
 		return new Vector3f(x * v.getX(), y * v.getY(), z * v.getZ());
 	}
+
+	public Vector3f divide(Vector3f scalar) {
+		float x = scalar.x == 0 ? 0 : this.x / scalar.x;
+		float y = scalar.y == 0 ? 0 : this.y / scalar.y;
+		float z = scalar.z == 0 ? 0 : this.z / scalar.z;
+		
+		return new Vector3f(x, y, z);
+	}
 	
 }

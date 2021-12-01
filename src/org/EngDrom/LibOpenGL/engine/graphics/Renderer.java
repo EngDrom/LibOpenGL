@@ -1,6 +1,7 @@
 package org.EngDrom.LibOpenGL.engine.graphics;
 
 import org.EngDrom.LibOpenGL.engine.graphics.meshes.ColorMesh;
+import org.EngDrom.LibOpenGL.engine.graphics.meshes.GUIMesh;
 import org.EngDrom.LibOpenGL.engine.graphics.meshes.TexturedMesh;
 import org.EngDrom.LibOpenGL.engine.io.Window;
 import org.EngDrom.LibOpenGL.engine.maths.Matrix4f;
@@ -17,6 +18,7 @@ public class Renderer {
 	
 	private Shader colorShader;
 	private Shader textureShader;
+	private Shader gui_shader;
 	
 	public Matrix4f getMatrix(Mesh m) {
 		if (m.getCamera() == null) {
@@ -33,6 +35,7 @@ public class Renderer {
 		this.shader = shader;
 		this.colorShader = new Shader("ressources/shaders/color_mesh_vertex.glsl", "ressources/shaders/color_mesh_fragment.glsl", window);
 		this.textureShader = new Shader("ressources/shaders/texture_mesh_vertex.glsl", "ressources/shaders/texture_mesh_fragment.glsl", window);
+		this.gui_shader = new Shader("ressources/shaders/gui_mesh_vertex.glsl", "ressources/shaders/gui_mesh_fragment.glsl", window);
 		this.window = window;
 	}
 	
@@ -40,6 +43,7 @@ public class Renderer {
 		window.setToCurrentGLContext();
 		this.colorShader.create();
 		this.textureShader.create();
+		this.gui_shader.create();
 	}
 	
 	public void renderMesh(ColorMesh mesh) {
@@ -208,6 +212,43 @@ public class Renderer {
 		
 		// Disable vertex position (0)
 		GL30.glDisableVertexAttribArray(0);
+		
+		// Unbind Vao by binding 0
+		GL30.glBindVertexArray(0);
+	}
+	
+	public void renderMesh(GUIMesh mesh) {
+		window.setToCurrentGLContext();
+		
+		// Bind Vao
+		GL30.glBindVertexArray(mesh.getVAO());
+		
+		// Bind vertex position and texture coordinates (0, 1)
+		GL30.glEnableVertexAttribArray(0);
+		GL30.glEnableVertexAttribArray(1);
+		
+		// Bind indices
+		GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, mesh.getIBO());
+		
+		GL13.glEnable(GL13.GL_TEXTURE0);
+		GL13.glBindTexture(GL11.GL_TEXTURE_2D, mesh.getMaterial() != null ? mesh.getMaterial().getTextureID() : 0);
+		
+		gui_shader.bind();
+		gui_shader.setUniform("view", getViewMatrix(mesh));
+		gui_shader.setUniform("isText", mesh.isTexture);
+		if (!mesh.isTexture)
+			gui_shader.setUniform("color", mesh.color);
+		
+		// Draw
+		GL11.glDrawElements(GL11.GL_TRIANGLES, mesh.getIndices().length, GL11.GL_UNSIGNED_INT, 0);
+		gui_shader.unbind();
+		
+		// Unbind Indices
+		GL15.glBindBuffer(GL15.GL_ELEMENT_ARRAY_BUFFER, 0);
+		
+		// Disable vertex position and texture coordinates (0, 1)
+		GL30.glDisableVertexAttribArray(0);
+		GL30.glDisableVertexAttribArray(1);
 		
 		// Unbind Vao by binding 0
 		GL30.glBindVertexArray(0);

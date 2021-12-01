@@ -105,44 +105,57 @@ public class Mesh {
 	
 	public void setScalar(Vector3f vector3f) {
 		this.scalar = vector3f;
+		this.buildMatrix();
 	}
 	
 	public void multScalar(Vector3f other) {
 		this.scalar = scalar.multiply(other);
+		this.buildMatrix();
 	}
 	
 	public Vector3f getScalar() {
 		return scalar;
 	}
 	
-	private Vector3f translation = new Vector3f(0,0,0);
+	private Vector3f cached_translation = new Vector3f(0, 0, 0);
+	private Vector3f translation = new Vector3f(0, 0, 0);
 	private Vector3f rot_axis = new Vector3f(0, 0, 0);
 	
 	private Matrix4f cache;
 	
 	public void setRotation(Vector3f rot_axis) {
 		this.rot_axis = rot_axis;
+		this.buildMatrix();
 	}
 	
 	public void setTranslation(Vector3f translation) {
 		this.translation = translation;
+		this.buildMatrix();
 	}
 	
 	private void buildMatrix() {
-		cache = Matrix4f.transform(translation, rot_axis, scalar);
+		this.build_cached_translation();
+		cache = Matrix4f.transform(cached_translation, rot_axis, scalar);
+	}
+	
+	private void build_cached_translation() {
+		cached_translation = translation.divide(scalar);
 	}
 	
 	public Matrix4f getMatrix() {
-		buildMatrix();
+		if (cache == null) this.buildMatrix();
+		
 		return cache;
 	}
 
 	public void addTranslation(Vector3f translation) {
 		this.translation = this.translation.add(translation);
+		this.buildMatrix();
 	}
 	
 	public void addRotation(Vector3f rotation) {
 		this.rot_axis = this.rot_axis.add(rotation);
+		this.buildMatrix();
 	}
 
 	public Vector3f getTranslation() {

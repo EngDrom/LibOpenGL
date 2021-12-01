@@ -10,6 +10,7 @@ import org.EngDrom.LibOpenGL.engine.utils.FileUtils;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.system.MemoryUtil;
+import org.lwjglx.util.vector.Vector4f;
 
 public class Shader {
 	// Shaders Code
@@ -100,6 +101,10 @@ public class Shader {
 	
 	public void setUniform(String name, Vector3f value) {
 		GL20.glUniform3f(getUniformLocation(name), value.getX(), value.getY(), value.getZ());
+	}
+	
+	public void setUniform(String name, Vector4f value) {
+		GL20.glUniform4f(getUniformLocation(name), value.getX(), value.getY(), value.getZ(), value.getW());
 	}
 	
 	public void setUniform(String name, Matrix4f value) {

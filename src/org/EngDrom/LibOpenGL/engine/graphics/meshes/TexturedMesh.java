@@ -24,7 +24,8 @@ public class TexturedMesh extends Mesh {
 	public void create() {
 		super.create();
 		
-		mat.create();
+		if (mat != null)
+			mat.create();
 		
 		// Generate texture coordinates buffer
 		FloatBuffer textureCoordinatesBuffer = MemoryUtil.memAllocFloat(vertices.length * 2);
@@ -54,7 +55,9 @@ public class TexturedMesh extends Mesh {
 	
 	public void destroy() {
 		GL15.glDeleteBuffers(tcbo);
-		mat.destroy();
+		
+		if (mat != null)
+			mat.destroy();
 		
 		super.destroy();
 	}
