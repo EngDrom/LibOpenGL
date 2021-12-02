@@ -7,6 +7,7 @@ import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.glfw.GLFWWindowSizeCallback;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL20;
 
 public class Window {
 	// Width and Height of window
@@ -96,6 +97,12 @@ public class Window {
 		
 		// Set Framerate
 		GLFW.glfwSwapInterval(1);
+		
+		this.setToCurrentGLContext();
+
+		// Enable Transparency
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 	}
 	
 	public void setToCurrentGLContext() {

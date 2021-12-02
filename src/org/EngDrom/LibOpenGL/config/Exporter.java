@@ -39,17 +39,19 @@ public class Exporter {
 		
 		Camera camera = new Camera();
 		
-		GUIMesh mesh = new GUIMesh(new Vector4f(0.5f, 0.5f, 0.5f, 1));
+		GUIMesh mesh = new GUIMesh(new Vector4f(0.5f, 0.5f, 0.5f, 0.5f));
+		GUIMesh mesh2 = new GUIMesh(new Vector4f(0.5f, 0.5f, 0.5f, 0.5f));
 		
 		Shader s = new Shader("ressources/shaders/vertex.glsl", "ressources/shaders/fragment.glsl", w);
 		
-		Renderer r = new Renderer(s, w);
+		Renderer r = new Renderer(s, w, "");
 		w.setBackgroundColor(0, 0, 0);
 		w.create();
 		
 		mesh.create();
 		mesh.setScalar(new Vector3f(0.25f, 1f, 1f));
 		mesh.addTranslation(new Vector3f(0.5f, 0f, 0f));
+		mesh2.create();
 	
 		r.create();
 		s.create();
@@ -57,6 +59,7 @@ public class Exporter {
 			w.update();
 			
 			r.renderMesh(mesh);
+			r.renderMesh(mesh2);
 			
 			w.swapBuffers();
 		}

@@ -30,5 +30,8 @@ public class GUIMesh extends TexturedMesh {
 		isTexture = false;
 		this.color = color;
 	}
+	public GUIMesh(TexturedVertex[] vertices, int[] indices, Material font_material) {
+		super(vertices, indices, font_material);
+	}
 	
 }

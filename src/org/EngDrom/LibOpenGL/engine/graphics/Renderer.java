@@ -31,11 +31,11 @@ public class Renderer {
 		return m.getMatrix();
 	}
 	
-	public Renderer(Shader shader, Window window) {
+	public Renderer(Shader shader, Window window, String shader_version) {
 		this.shader = shader;
-		this.colorShader = new Shader("ressources/shaders/color_mesh_vertex.glsl", "ressources/shaders/color_mesh_fragment.glsl", window);
-		this.textureShader = new Shader("ressources/shaders/texture_mesh_vertex.glsl", "ressources/shaders/texture_mesh_fragment.glsl", window);
-		this.gui_shader = new Shader("ressources/shaders/gui_mesh_vertex.glsl", "ressources/shaders/gui_mesh_fragment.glsl", window);
+		this.colorShader   = new Shader("ressources/shaders"+shader_version+"/color_mesh_vertex.glsl", "ressources/shaders/color_mesh_fragment.glsl", window);
+		this.textureShader = new Shader("ressources/shaders"+shader_version+"/texture_mesh_vertex.glsl", "ressources/shaders/texture_mesh_fragment.glsl", window);
+		this.gui_shader    = new Shader("ressources/shaders"+shader_version+"/gui_mesh_vertex.glsl", "ressources/shaders/gui_mesh_fragment.glsl", window);
 		this.window = window;
 	}
 	

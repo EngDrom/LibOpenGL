@@ -14,4 +14,8 @@ void main() {
 	} else {
 		outColor = passColor;
 	}
+	
+	if (outColor.a < 0.5) {
+		discard;
+	}
 }
