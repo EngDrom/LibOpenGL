@@ -14,6 +14,7 @@ public class Material {
 	private Texture texture;
 	private float width, height;
 	private int textureID;
+	private boolean created = false;
 	
 	private String path;
 	
@@ -22,11 +23,15 @@ public class Material {
 	}
 	
 	public void create() {
+		if (created) return;
+		
 		createImg();
 		
 		width = texture.getWidth();
 		height = texture.getHeight();
 		textureID = texture.getTextureID();
+		
+		created = true;
 	}
 	
 	public void createImg() {

@@ -22,6 +22,9 @@ public class Shader {
 
 	// Load shaders code
 	public Shader(String vertexPath, String fragmentPath, Window window) {
+		System.out.println("Starting shader");
+		System.out.println(vertexPath);
+		System.out.println(fragmentPath);
 		this.vertexFile = FileUtils.loadAsString(vertexPath);
 		this.fragmentFile = FileUtils.loadAsString(fragmentPath);
 		this.window = window;

@@ -56,8 +56,9 @@ public class TexturedMesh extends Mesh {
 	public void destroy() {
 		GL15.glDeleteBuffers(tcbo);
 		
-		if (mat != null)
-			mat.destroy();
+		// Avoid destroy if material is used somewhere else
+		// if (mat != null)
+		//      mat.destroy();
 		
 		super.destroy();
 	}
